@@ -124,6 +124,7 @@ body {
 }
 .containermodel p {
   margin-bottom: 10px;
+  font-size: 18px;
 }
 .containermodel button {
   background-color: #c2255c;
@@ -134,6 +135,7 @@ body {
   display: block;
   margin-top: 15px;
   cursor: pointer;
+  font-size: 18px;
 }
 .containermodel button:hover {
   background-color: #e64980;

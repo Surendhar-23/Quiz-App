@@ -52,18 +52,24 @@ let btnnxt = document.querySelector(".btn");
 let modellayer = document.querySelector(".containermodel");
 let model = document.querySelector(".correctmodel");
 let modelbtn = document.querySelector(".correctmodel button");
+let point = document.querySelector(".point");
 let score = 0;
+let p = 0;
+
 let choice = Math.floor(Math.random() * 5 + 1);
+
+for (let i = 0; i < choicelist.length; i++) {
+  choicelist[i].addEventListener("click", () => {
+    checkanswer(choicelist[i], i);
+  });
+}
 
 let makequiz = function () {
   choice = Math.floor(Math.random() * 5 + 1);
+  p = 1;
   ques.textContent = questions[choice - 1]["question"];
   for (let i = 0; i < 4; i++) {
     choicelist[i].textContent = questions[choice - 1]["answers"][i]["text"];
-  }
-
-  for (let i = 0; i < choicelist.length; i++) {
-    choicelist[i].addEventListener("click", () => checkanswer(choicelist[i]));
   }
   for (let i = 0; i < choicelist.length; i++) {
     if (choicelist[i].classList.contains("correct"))
@@ -73,21 +79,22 @@ let makequiz = function () {
   }
 };
 
-let checkanswer = function (li) {
-  let ans = li.textContent;
-  console.log(li);
-  for (let i = 0; i < 4; i++) {
-    if (questions[choice - 1]["answers"][i]["text"] == ans)
-      if (questions[choice - 1]["answers"][i]["correct"]) {
-        li.classList.add("correct");
-        displaycrtmodel();
-      } else li.classList.add("wrong");
+let checkanswer = function (li, pos) {
+  if (questions[choice - 1]["answers"][pos]["correct"]) {
+    li.classList.add("correct");
+    point.textContent = p;
+    score += p;
+    displaycrtmodel();
+  } else {
+    p = p == 1 ? 0.5 : p == 0.5 ? 0.25 : 0;
+    li.classList.add("wrong");
   }
+  console.log(score);
 };
 
 makequiz();
-btnnxt.addEventListener("click", makequiz);
-document.querySelector("body").addEventListener("keypress", makequiz);
+btnnxt.addEventListener("doubleclick", makequiz);
+// document.querySelector("body").addEventListener("keypress", makequiz);
 
 let displaycrtmodel = function () {
   modellayer.style.display = "flex";
@@ -99,3 +106,4 @@ let closemodel = function () {
   model.style.display = "none";
 };
 modelbtn.addEventListener("click", closemodel);
+modellayer.addEventListener("click", closemodel);
