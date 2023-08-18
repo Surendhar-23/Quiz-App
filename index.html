@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Quiz-Lets Fun</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <section class="section">
-        <div class="container">
-            <h2 class="title">Simple Quiz</h2>
-            <div class="quiz">
-            <h3 class="ques">1.Which is the largest animal in world</h3>
-            <ul class="choicelist">
-                <li>Shark</li>
-                <li class="correct">Blue Whale</li>
-                <li class="wrong">Elephant</li>
-                <li>Giraffe</li>
-            </ul>
+      <div class="container">
+        <h2 class="title">Simple Quiz</h2>
+        <div class="quiz">
+          <h3 class="ques">1.Which is the largest animal in world</h3>
+          <ul class="choicelist">
+            <li>Shark</li>
+            <li>Blue Whale</li>
+            <li>Elephant</li>
+            <li>Giraffe</li>
+          </ul>
         </div>
-            <button class="btn" onclick="makequiz()"><span></span>Next</button>
+        <button class="btn" onclick="makequiz()"><span></span>Next</button>
+      </div>
+      <div class="containermodel">
+        <div class="correctmodel">
+          <p>You answered Correctly..!</p>
+          <p>Score : +1 Point</p>
+          <button>Close</button>
         </div>
+      </div>
     </section>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

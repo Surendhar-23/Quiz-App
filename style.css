@@ -1,107 +1,143 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: #212529;
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #212529;
 }
 
-.section{
-    height: 100vh;
-    background-color: #66d9e8;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.section {
+  height: 100vh;
+  background-color: #66d9e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.container{
-    width: 500px;
-    /* height: 60%; */
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin: 5px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.123);
-    padding: 10px    20px;
-    padding-bottom: 50px;
-    position: relative;
+.container {
+  width: 500px;
+  /* height: 60%; */
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  margin: 5px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.123);
+  padding: 10px 20px;
+  padding-bottom: 50px;
+  position: relative;
 }
 
-.container .title{
-    font-size: 2rem;
-    letter-spacing: -2px;
-    margin-bottom: 16px;
+.container .title {
+  font-size: 2rem;
+  letter-spacing: -2px;
+  margin-bottom: 16px;
 }
 
-.quiz .ques{
-    margin-bottom: 14px;
+.quiz .ques {
+  margin-bottom: 14px;
 }
 
-.choicelist{
-    /* min-height: 180px; */
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    justify-content: space-around;
-    padding: 5px;
+.choicelist {
+  /* min-height: 180px; */
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
 }
 
-.choicelist li{
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.247);
-    padding: 5px 10px;
-    width: 100%;
-    margin: 10px 10px;
-    transition: 0.3s;
-    border-radius: 5px;
-    cursor: pointer;
+.choicelist li {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.247);
+  padding: 5px 10px;
+  width: 100%;
+  margin: 10px 10px;
+  transition: 0.3s;
+  border-radius: 5px;
+  cursor: pointer;
 }
-.choicelist li:hover{
-    transform: translatex(-5px);
-}
-
-.correct{
-    background-color: rgb(46, 202, 46);
-}
-.wrong{
-    background-color: rgb(243, 59, 59);
-}
-.btn{
-    position: absolute;
-    bottom: 5%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 8px 16px;
-    /* background-color: #e64980; */
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-   z-index: 1;
-   background: transparent;
-   /* border: 1px solid #ee2a6e75; */
-   box-shadow: 0px 0px 10px #ff0d6263;;
+.choicelist li:hover {
+  transform: translatex(-5px);
 }
 
-.btn span{
-    /* background-color: #212529; */
-    
-    left: 0;
-    top: 0;
-    border-radius: 5px;
-    position: absolute;
-    width: 0%;
-    height: 100%;
-    z-index: -1;
-    transition: 0.5s;
-    /* transform: translateX(-100%); */
+.correct {
+  background-color: rgb(46, 202, 46);
 }
-.btn:hover span{
-    width: 100%;
-    background-color: #c2255c;
+.wrong {
+  background-color: rgb(243, 59, 59);
 }
 
+.btn {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 8px 16px;
+  /* background-color: #e64980; */
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  background: transparent;
+  /* border: 1px solid #ee2a6e75; */
+  box-shadow: 0px 0px 10px #ff0d6263;
+}
+
+.btn span {
+  /* background-color: #212529; */
+  left: 0;
+  top: 0;
+  border-radius: 5px;
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  z-index: -1;
+  transition: 0.5s;
+  /* transform: translateX(-100%); */
+}
+.btn:hover span {
+  width: 100%;
+  background-color: #c2255c;
+}
+
+.containermodel {
+  top: 0;
+  position: absolute;
+  background-color: #cd0909c0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.correctmodel {
+  width: 300px;
+  padding: 15px 20px;
+  border-radius: 10px;
+  background-color: #66d9e8;
+  display: none;
+}
+.containermodel p {
+  margin-bottom: 10px;
+}
+.containermodel button {
+  background-color: #c2255c;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.containermodel button:hover {
+  background-color: #e64980;
+}
 /* @keyframes btnhover{
     0%{
         width: 0;
